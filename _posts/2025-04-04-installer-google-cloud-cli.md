@@ -7,7 +7,7 @@ author: philippe
 categories: [Logiciels]
 tags: [installation]
 image: 
-    path: https://www.svgrepo.com/show/353805/google-cloud.svg
+    path: /assets/img/logo/google_cloud.png
     alt: Installation Google Cloud CLI
 ---
 
@@ -16,7 +16,7 @@ Afin de développer localement avec les outils de Google Cloud, on utilise `Goog
 ## Google Cloud CLI
 
 1. Télécharger et installer Google Cloud CLI (gcloud) : [Installer gcloud CLI](https://cloud.google.com/sdk/docs/install?hl=fr){: target="_blank" }
-    ***L'option d'installation pour un seul utilisateur n'a pas besoin de droit d'administrateur.***
+    ***L'option d'installation pour un seul utilisateur n'a pas besoin de droit d'administrateur.***  
     ![installation 1](/assets/img/installation/gcloud/installation_1.png){: w="400" style="border-radius: 10px;" .w-75 .normal .shadow }
 {: .prompt-tip }
 

@@ -7,7 +7,7 @@ author: philippe
 categories: [Logiciels]
 tags: [installation]
 image: 
-    path: https://www.svgrepo.com/show/374171/vscode.svg
+    path: /assets/img/logo/vscode.png
     alt: Installation Visual Studio Code
 ---
 

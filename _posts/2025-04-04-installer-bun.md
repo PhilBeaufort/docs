@@ -7,7 +7,7 @@ author: philippe
 categories: [Logiciels]
 tags: [installation]
 image: 
-    path: https://icon.icepanel.io/Technology/svg/Bun.svg
+    path: /assets/img/logo/bun.png
     alt: Installation Bun
 ---
 

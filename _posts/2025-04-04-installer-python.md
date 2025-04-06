@@ -7,7 +7,7 @@ author: philippe
 categories: [Logiciels]
 tags: [installation]
 image: 
-    path: https://www.svgrepo.com/show/452091/python.svg
+    path: /assets/img/logo/python.png
     alt: Installation Python
 ---
 

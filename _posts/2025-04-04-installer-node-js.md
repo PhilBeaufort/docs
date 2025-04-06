@@ -8,7 +8,7 @@ categories: [Logiciels]
 tags: [installation]
 toc: true
 image: 
-    path: https://www.svgrepo.com/show/354118/nodejs.svg
+    path: /assets/img/logo/nodejs.png
     alt: Installation Node.js
 ---
 

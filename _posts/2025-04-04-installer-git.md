@@ -7,7 +7,7 @@ author: philippe
 categories: [Logiciels]
 tags: [installation]
 image: 
-    path: https://www.svgrepo.com/show/452210/git.svg
+    path: /assets/img/logo/git.png
     alt: Installation Git
 ---
 

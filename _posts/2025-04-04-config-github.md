@@ -6,7 +6,7 @@ description: Guide et configuration pour utiliser la plateforme Github.
 categories: [Guide]
 tags: [guide, outil]
 image: 
-    path: https://icon.icepanel.io/Technology/png-shadow-512/GitHub.png
+    path: /assets/img/logo/github.png
     alt: Documentation avec Jekyll
 ---
 ## Configuration SSH
