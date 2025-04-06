@@ -1,0 +1,23 @@
+name: "💡 Feature Request"
+description: Create a new ticket for a new feature request
+title: "💡 [FEAT] - <title>"
+labels: [
+  "feature-request"
+]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: "Sommaire"
+      description: Courte explication de la feature
+      placeholder: Décrire la feature en quelques lignes
+    validations:
+      required: true
+  - type: textarea
+    id: blocks
+    attributes:
+      label: "Bloquants (facultatif)"
+      description: Bloquants qui empêches ou ralentissent le développement
+      placeholder: Identification des problèmes
+    validations:
+      required: false

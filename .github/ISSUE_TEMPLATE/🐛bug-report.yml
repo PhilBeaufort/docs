@@ -1,0 +1,35 @@
+name: "🐛 Bug Report"
+description: Create a new ticket for a bug.
+title: "🐛 [BUG] - <title>"
+labels: [
+  "bug-report"
+]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: Entrer une description explicite du problème avec des capture d'écran si nécessaire
+      placeholder: Petite description du problème avec des capture d'écran si nécessaire
+    validations:
+      required: true
+  - type: textarea
+    id: reprod
+    attributes:
+      label: "Reproduction de l'erreur (facultatif)"
+      description: Entrer les étapes nécessaire pour reproduire l'erreur
+      value: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Logs (facultatif)"
+      description: Copier et coller toute sortie de journal pertinente
+      render: bash
+    validations:
+      required: false
