@@ -1,41 +1,42 @@
 ---
 layout: post
-title: Configuration Github
+title: Config Github
 date: 2025-04-04 17:32 -0400
-description: Guide et configuration pour utiliser la plateforme Github.
+description: Guide and configuration for using the Github platform.
 categories: [Guide]
-tags: [guide, outil]
+tags: [guide, tool]
 image: 
     path: /assets/img/logo/github.png
-    alt: Documentation avec Jekyll
+    alt: Doc Jekyll
 ---
-## Configuration SSH
 
-Afin d'utiliser Git avec GitHub, une clé SSH doit être créée sur votre poste et ajouter dans les paramètres de votre compte GitHub.
+## Config SSH
 
-1. Ouvrir le terminal
-1. Créer une nouvelle Clé `SSH` avec cette commade
+To use Git with GitHub, an SSH key must be created on your computer and added to your GitHub account settings.
+
+1. Open the terminal
+1. Create a new `SSH` key with this command
 
     ```shell
     ssh-keygen -t ed25519 -C "<user_mail>"
     ```
 
-    - `<user_mail>` est votre adresse courriel.
+    - `<user_mail>` is your email address.
 
-1. Ouvrir la nouvelle clé `C:\Users\<username>\.ssh\id_ed25519.pub` dans un **éditeur de texte**.
-1. Ajouter le contenu de la clé dans une nouvelle clé `SSH` sur Github  
+1. Open the new key `C:\Users\<username>\.ssh\id_ed25519.pub` in a **text editor**.
+1. Add the key contents to a new `SSH` key on Github
 
-Étape|Image|Description
+Step|Image|Description
 -|-|-
-1|![github ssh 1](/assets/img/developpeur/github_ssh_1.png){: w="600" style="border-radius: 10px;" .shadow}| Clic sur image de profit
-2|![github ssh 2](/assets/img/developpeur/github_ssh_2.png){: w="300" style="border-radius: 10px;" .shadow}| Overture des paramètres de Github
-3|![github ssh 3](/assets/img/developpeur/github_ssh_3.png){: w="300" style="border-radius: 10px;" .shadow}| Overture des paramètre de clés SSH et GPG
-4|![github ssh 4](/assets/img/developpeur/github_ssh_4.png){: w="500" style="border-radius: 10px;" .shadow}| Nouvelle clé SHH
-5|![github ssh 5](/assets/img/developpeur/github_ssh_5.png){: w="500" style="border-radius: 10px;" .shadow}| Configuration de la nouvelle clé SSH
+1|![github ssh 1](/assets/img/developpeur/github_ssh_1.png){: w="600" style="border-radius: 10px;" .shadow}| Click on the profit image
+2|![github ssh 2](/assets/img/developpeur/github_ssh_2.png){: w="300" style="border-radius: 10px;" .shadow}| Open Github settings
+3|![github ssh 3](/assets/img/developpeur/github_ssh_3.png){: w="300" style="border-radius: 10px;" .shadow}| Opening SSH and GPG Key Settings
+4|![github ssh 4](/assets/img/developpeur/github_ssh_4.png){: w="500" style="border-radius: 10px;" .shadow}| New SSH Key
+5|![github ssh 5](/assets/img/developpeur/github_ssh_5.png){: w="500" style="border-radius: 10px;" .shadow}| Configuring the New SSH Key
 
-- Ajouter un nom à la clé
-- Copier le contenu de la clé publique `id_ed25519.pub` dans le champ `Key`
-- Finalement valider et ajouter la clé
+- Add a name to the key
+- Copy the contents of the public key `id_ed25519.pub` into the `Key` field
+- Finally, validate and add the key
 
-> Une fois cette configuration faite, vous pourrez utiliser github et git pour `clone`, `commit`, `push`, `pull` , etc.
+> Once this configuration is complete, you will be able to use Github and Git to `clone`, `commit`, `push`, `pull`, etc.
 {: .prompt-tip }

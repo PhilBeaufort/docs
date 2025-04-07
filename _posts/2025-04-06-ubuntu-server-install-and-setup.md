@@ -40,9 +40,11 @@ image:
 > Once you are done with the installation, you can enter with [**SSH** remote access](#-connect-to-ubuntu-server)
 {: .prompt-info }
 
-## Installation des dépendances
+## 💽 Install dependencies
 
-
+1. Docker and Docker Compose
+1. Nvidia and Cuda
+1. Git
 
 ## 🔗 Connect to Ubuntu Server
 

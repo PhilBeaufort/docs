@@ -2,6 +2,9 @@
 layout: post
 title: Ubuntu autoinstall
 date: 2025-04-07 00:57 -0400
+description: Use autoinstall with ubuntu server
+categories: [Documentation, Server]
+tags: [documentation, server, ubuntu]
 ---
 
 <!-- markdownlint-disable MD031 -->
