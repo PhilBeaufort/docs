@@ -41,127 +41,72 @@ image:
 > Once you are done with the installation, you can enter with [**SSH** remote access](#-connect-to-ubuntu-server)
 {: .prompt-info }
 
-## 💽 Install dependencies
+## SSH Security
 
-1. Docker and Docker Compose
+```
+sudo nano /etc/ssh/sshd_config
+```
 
-    Reference: [Docker docs, ubuntu install](https://docs.docker.com/engine/install/ubuntu/)
+Edit the config file Uncomment and change values or add them
 
-    1. Set up Docker's `apt` repository.
+Parameter|Value|Position|Detail
+-|-|-|-
+PasswordAuthentification|no|56|Disable ssh password auth
+PermitRootLogin|no|Add to last line|Disable ssh login with root user
+UsePAM|no|83|Disable ssh PAM Authentification
 
-    ```shell
-    # Add Docker's official GPG key:
-    sudo apt-get update
-    sudo apt-get install ca-certificates curl
-    sudo install -m 0755 -d /etc/apt/keyrings
-    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-    sudo chmod a+r /etc/apt/keyrings/docker.asc
+```
+sudo nano /etc/ssh/sshd_config.d/50-cloud-init.conf
+```
 
-    # Add the repository to Apt sources:
-    echo \
-        "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-        $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \ 
-        sudo tee /etc/apt/sources.list.d/docker.list > /dev/null 
-    sudo apt-get update
-    ```
-    {: .nolineno }
+Set PasswordAuthentification to no
 
-    1. To install the latest version, run
+Apply changes 
 
-    ```shell
-    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-    ```
-    {: .nolineno }
+```
+sudo systemctl reload ssh
+```
 
-    1. Enable Docker at boot
-    ```shell
-    sudo systemctl enable docker
-    ```
-    {: .nolineno
-    }
-    1. Verify that the installation is successful by running the hello-world image:
+## Firewall security 
 
-    ```shell
-    sudo docker run hello-world
-    ```
-    {: .nolineno }
+Setup firewall 
 
-    > Add current user to the docker group:  
-    > `sudo usermod -aG docker $USER`  
-    > - logout and login to apply or use the command `newgrp docker` to apply immediately.
-    {: .prompt-info}
-1. Nvidia and Cuda
+PORT | TASK
+-|-
+22 | open ssh
+80 | http
+443 https
 
-    1. Install nvidia drivers
+1. Update and install
 
-        - Check if GPU is detected
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install ufw fail2ban -y
+```
 
-        ```shell
-        lspci | grep -i nvidia
-        lsmod | grep nvidia
-        ```
-        {: .nolineno }
+1. Setup firewall
 
-        - If GPU is detected install nvidia drivers
+```bash
+# Setup 
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow OpenSSH
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+```
+1. Enable firewall
 
-        ```shell
-        sudo apt install nvidia-driver-535-server -y
-        ```
-        {: .nolineno }
+```bash
+# Enable
+sudo ufw enable
+```
 
-        - Reboot and complete key registration for secure boot if enabled
+1. Check rules and status
 
-        ```shell
-        sudo reboot
-        ```
-        {: .nolineno }
-
-    1. Cuda toolkit Installer (Ubuntu2404 x86_64)
-
-    ```shell
-    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
-    sudo dpkg -i cuda-keyring_1.1-1_all.deb
-    sudo apt-get update
-    sudo apt-get -y install cuda-toolkit-12-8
-    ```
-    {: .nolineno}
-
-    Reference: [developer.nvidia.com](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_network)
-
-    1. 🛠️ Configure Docker to Use NVIDIA Runtime
-
-    ```shell
-    sudo nvidia-ctk runtime configure --runtime=docker
-    sudo systemctl restart docker
-    ```
-    {: .nolineno }
-
-    1. Verify if it works
-
-    ```shell
-    docker run --rm --gpus all nvidia/cuda:12.3.0-base-ubuntu22.04 nvidia-smi
-    ```
-    {: .nolineno }
-
-1. Others
-
-    1. secure and update
-
-    ```shell
-    sudo apt update && sudo apt upgrade -y
-    sudo apt install ufw fail2ban -y
-    ```
-    {: .nolineno }
-
-    ```shell
-    sudo ufw allow OpenSSH
-    sudo ufw enable
-    ```
-    {: .nolineno }
-
-    > - Fail2ban helps prevent brute-force SSH attacks.
-    > - Optional: Change SSH port (/etc/ssh/sshd_config) and restart `sudo systemctl restart sshd`.
-    {: .promt-info}
+```bash
+sudo ufw show added
+sudo ufw status
+```
 
 ## 🔗 Connect to Ubuntu Server
 
