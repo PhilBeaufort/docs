@@ -3,6 +3,8 @@ layout: post
 title: Install Windows 11 with Local account
 date: 2025-04-09 22:54 -0400
 description: Ways to enable local account creation on Windows 11
+categories: [Documentation, Windows]
+tags: [documentation, windows, local]
 ---
 
 One issue with the Windows 11 installer is that it requires you to create an account using a Microsoft account. Here are four ways to bypass this requirement.
