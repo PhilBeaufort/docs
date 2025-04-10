@@ -7,7 +7,7 @@ author: philippe
 categories: [Software]
 tags: [guide, install]
 image: 
-    path: /assets/img/logo/python.png
+    path: /assets/img/banners/python.png
     alt: Install Python
 ---
 

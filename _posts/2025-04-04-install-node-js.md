@@ -8,7 +8,7 @@ categories: [Software]
 tags: [guide, install]
 toc: true
 image: 
-    path: /assets/img/logo/nodejs.png
+    path: /assets/img/banners/nodejs.png
     alt: Install Node.js
 ---
 

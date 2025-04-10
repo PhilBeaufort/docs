@@ -7,7 +7,7 @@ author: philippe
 categories: [Software]
 tags: [guide, install]
 image: 
-    path: /assets/img/logo/google_cloud.png
+    path: /assets/img/banners/google_cloud.png
     alt: Install Google Cloud CLI
 ---
 

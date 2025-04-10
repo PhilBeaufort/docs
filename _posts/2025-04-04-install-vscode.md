@@ -7,7 +7,7 @@ author: philippe
 categories: [Software]
 tags: [guide, install]
 image: 
-    path: /assets/img/logo/vscode.png
+    path: /assets/img/banners/vscode.png
     alt: Install Visual Studio Code
 ---
 

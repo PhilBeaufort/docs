@@ -6,7 +6,7 @@ description: Configuration of Porkbun with Cloudflare.
 categories: [Documentation, Networking]
 tags: [documentation, network]
 image: 
-    path: /assets/img/logo/porkbun&cloudflare.png
+    path: /assets/img/banners/porkbun&cloudflare.png
     alt: Documentation avec Jekyll
 ---
 

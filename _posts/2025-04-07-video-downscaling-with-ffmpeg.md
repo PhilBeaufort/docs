@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Video downscaling with FFmpeg
+title: FFmpeg on windows
 date: 2025-04-07 17:34 -0400
+description: Downscale video size with FFmpg
 categories: [Documentation, Tool]
 tags: [documentation, tool]
 ---

@@ -7,7 +7,7 @@ author: philippe
 categories: [Software]
 tags: [guide, install]
 image: 
-    path: /assets/img/logo/bun.png
+    path: /assets/img/banners/bun.png
     alt: Install Bun
 ---
 

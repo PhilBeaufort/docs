@@ -7,7 +7,7 @@ author: philippe
 categories: [Guide]
 tags: [guide, tool]
 image: 
-    path: /assets/img/logo/jekyll.png
+    path: /assets/img/banners/jekyll.png
     alt: Documentation with Jekyll
 ---
 

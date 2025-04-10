@@ -6,8 +6,8 @@ description: Guide and configuration for using the Github platform.
 categories: [Guide]
 tags: [guide, tool]
 image: 
-    path: /assets/img/logo/github.png
-    alt: Doc Jekyll
+    path: /assets/img/banners/github.png
+    alt: github
 ---
 
 ## Config SSH

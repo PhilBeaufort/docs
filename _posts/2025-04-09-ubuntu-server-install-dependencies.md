@@ -2,13 +2,17 @@
 layout: post
 title: Ubuntu server install dependencies
 date: 2025-04-09 00:02 -0400
+description: Install / Remove dependencies for ubuntu server
+categories: [Documentation, Server]
+tags: [documentation, server, ubuntu]
+image: 
+    path: /assets/img/banners/ubuntu_server.png
+    alt: Ubuntu server
 ---
 
 ## Docker and Docker Compose
 
 Reference: [Docker docs, ubuntu install](https://docs.docker.com/engine/install/ubuntu/)
-
-1. Set up Docker's `apt` repository.
 
 ```shell
 # Add Docker's official GPG key:
@@ -18,29 +22,22 @@ sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-# Add the repository to Apt sources:
+# Add the repository to apt sources:
 echo \
     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
     $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \ 
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null 
 sudo apt-get update
-```
-{: .nolineno }
 
-1. To install the latest version, run
-
-```shell
+# Install latest version
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-{: .nolineno }
 
-1. Enable Docker at boot
-```shell
+# Enable Docker at boot
 sudo systemctl enable docker
 ```
-{: .nolineno
-}
-1. Verify that the installation is successful by running the hello-world image:
+{: .nolineno }
+
+Verify that the installation is successful by running the hello-world image:
 
 ```shell
 sudo docker run hello-world
@@ -56,31 +53,23 @@ sudo docker run hello-world
 
 1. Install nvidia drivers
 
-- Check if GPU is detected
-
 ```shell
+# Check if GPU is detected
 lspci | grep -i nvidia
 lsmod | grep nvidia
-```
-{: .nolineno }
 
-- If GPU is detected install nvidia drivers
-
-```shell
+# If GPU is detected install nvidia drivers (version optional)
 sudo apt install nvidia-driver-535-server -y
-```
-{: .nolineno }
 
-- Reboot and complete key registration for secure boot if enabled
-
-```shell
+# Reboot and complete key registration for secure boot if enabled
 sudo reboot
 ```
 {: .nolineno }
 
-1. Cuda toolkit Installer (Ubuntu2404 x86_64)
+1. Cuda toolkit
 
 ```shell
+# Install Cuda toolkit Installer (Ubuntu2404 x86_64)
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt-get update
@@ -105,22 +94,62 @@ docker run --rm --gpus all nvidia/cuda:12.3.0-base-ubuntu22.04 nvidia-smi
 ```
 {: .nolineno }
 
-## Others
+## Remove Docker
 
-1. secure and update
+```bash
+#Stop docker service 
+sudo systemctl stop docker
+sudo systemctl stop docker.service
+sudo systemctl stop docker.socket
 
-```shell
-sudo apt update && sudo apt upgrade -y
-sudo apt install ufw fail2ban -y
+#Uninstall docker packages
+sudo apt-get purge docker-ce docker-ce-cli containerd.io
+
+# Remove Docker images containers, volumes and networks
+sudo rm -rf /var/lib/docker
+
+# Remove Docker group
+sudo groupdel docker
+
+# Remove Docker binairies:
+sudo rm /usr/local/bin/docker-compose
+sudo rm /usr/local/bin/docker
+
+# Clean up unused dependencies
+sudo apt-get autoremove
+sudo apt-get clean
+
+# Check if compenent with "docker" are still present, remove if needed
+dpkg -l | grep docker
 ```
 {: .nolineno }
 
-```shell
-sudo ufw allow OpenSSH
-sudo ufw enable
+## Remove Dokploy
+
+```bash
+# Stop instance
+sudo systemctl stop dokploy
+
+# Uninstall
+sudo rm -rf /usr/local/bin/dokploy
+
+# Delete configuration files
+sudo rm -rf ~/.dokploy
+sudo rm -rf /etc/dokploy
+
+# Clean up leftover dependencies
+sudo apt-get autoremove
+sudo apt-get clean
 ```
 {: .nolineno }
 
-> - Fail2ban helps prevent brute-force SSH attacks.
-> - Optional: Change SSH port (/etc/ssh/sshd_config) and restart `sudo systemctl restart sshd`.
-{: .promt-info}
+# Remove snap
+
+```bash
+# check if snap of app exists
+snap list | grep docker
+
+# Remove snap app
+sudo snap remove docker
+```
+{: .nolineno }

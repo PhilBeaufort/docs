@@ -6,19 +6,16 @@ description: First Config of ubuntu server
 categories: [Documentation, Server]
 tags: [documentation, server, ubuntu]
 image: 
-    path: /assets/img/logo/ubuntu_server.png
-    alt: Documentation avec Jekyll
+    path: /assets/img/banners/ubuntu_server.png
+    alt: Ubuntu server
 ---
 
-<!-- markdownlint-disable MD007 -->
-<!-- markdownlint-disable MD031 -->
-<!-- markdownlint-disable MD046 -->
 ## 🔧 Setup a boot and installation media (Autoinstall not working)
 
 `parameters` represent my config
 
-1. Download the most recent [Ubuntu server LTS](https://ubuntu.com/download/server)
-1. Use [Rufus](https://rufus.ie/en/) and USB Key to create a Boot Media
+1. Download the most recent [Ubuntu server LTS](https://ubuntu.com/download/server){: target="_blank" }
+1. Use [Rufus](https://rufus.ie/en/){: target="_blank" } and USB Key to create a Boot Media
 1. Once the boot media is completed, open the USB with a file manager
 1. Launch to Installation Media with the computer 1 time boot option
 1. Choose language `English`
@@ -32,7 +29,7 @@ image:
   - User name `<user_name>`
   - password `<user_password>`
 
-1. You can activate Ubuntu pro right now if you want by entering the code given if you choose to activate here : [https://ubuntu.com/pro/attach](https://ubuntu.com/pro/attach)
+1. You can activate Ubuntu pro right now if you want by entering the code given if you choose to activate here : [https://ubuntu.com/pro/attach](https://ubuntu.com/pro/attach){: target="_blank" }
 1. Install OpenSSH server if you want to connect through SSH. You can import it if you added your public Key to you GitHub account.
 1. You are also given the option to install packages before completing the installation.
 1. Wait for the reboot and keep the local IP address of the server for remote access.
@@ -55,58 +52,54 @@ PasswordAuthentification|no|56|Disable ssh password auth
 PermitRootLogin|no|Add to last line|Disable ssh login with root user
 UsePAM|no|83|Disable ssh PAM Authentification
 
-```
+```bash
 sudo nano /etc/ssh/sshd_config.d/50-cloud-init.conf
 ```
+{: .nolineno }
 
-Set PasswordAuthentification to no
+Set PasswordAuthentification to `no`
 
 Apply changes 
 
 ```
 sudo systemctl reload ssh
 ```
+{: .nolineno }
 
 ## Firewall security 
 
 Setup firewall 
 
-PORT | TASK
+PORT|TASK
 -|-
 22 | open ssh
 80 | http
-443 https
-
-1. Update and install
+443| https
 
 ```bash
+# Update and install
 sudo apt update && sudo apt upgrade -y
 sudo apt install ufw fail2ban -y
-```
 
-1. Setup firewall
-
-```bash
-# Setup 
+# Setup firewall
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow OpenSSH
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
-```
-1. Enable firewall
 
-```bash
 # Enable
 sudo ufw enable
-```
 
-1. Check rules and status
-
-```bash
+# Check rules and status configured
 sudo ufw show added
 sudo ufw status
 ```
+{: .nolineno }
+
+> - Fail2ban helps prevent brute-force SSH attacks.
+> - Optional: Change SSH port (/etc/ssh/sshd_config) and restart `sudo systemctl restart sshd`.
+{: .promt-info}
 
 ## 🔗 Connect to Ubuntu Server
 

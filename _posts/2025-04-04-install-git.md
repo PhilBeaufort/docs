@@ -7,7 +7,7 @@ author: philippe
 categories: [Software]
 tags: [guide, install]
 image: 
-    path: /assets/img/logo/git.png
+    path: /assets/img/banners/git.png
     alt: Install Git
 ---
 
