@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Install Windows 11 with Local account
-date: 2025-04-09 22:54 -0400
+title: Install Windows with Local account
+date: 2025-04-10 01:16 -0400
 description: Ways to enable local account creation on Windows 11
 categories: [Documentation, Windows]
 tags: [documentation, windows, local]
