@@ -13,7 +13,7 @@ One issue with the Windows 11 installer is that it requires you to create an acc
 
 
 1. Once in the windows installer, press Shift + F10 to open the Command Prompt.
-1. Type the `command oobe\bypassnro` and press Enter. The system will reboot automatically.
+1. Type the command `oobe\bypassnro` and press Enter. The system will reboot automatically.
 
 After the reboot, you should be able to create a local account instead of signing in with a Microsoft account.
 
