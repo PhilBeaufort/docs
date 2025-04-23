@@ -9,13 +9,18 @@ tags: [documentation, windows, local]
 
 One issue with the Windows 11 installer is that it requires you to create an account using a Microsoft account. Here are four ways to bypass this requirement.
 
-## oobe\bypassnro _(disabled in the latest insider preview)_
-
+## oobe\bypassnro _(disabled in the 25H2)_
 
 1. Once in the windows installer, press Shift + F10 to open the Command Prompt.
 1. Type the command `oobe\bypassnro` and press Enter. The system will reboot automatically.
 
 After the reboot, you should be able to create a local account instead of signing in with a Microsoft account.
+
+## New bypass
+
+1. Once in the windows installer, press Shift + F10 to open the Command Prompt.
+1. Type the command `start ms-cxh:localonly` and press Enter.
+1. Create a local account and you will be forwarded through the setup.
 
 ## Using **Rufus** to Create a Bootable Media
 
