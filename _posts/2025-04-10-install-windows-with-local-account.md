@@ -17,14 +17,6 @@ One issue with the Windows 11 installer is that it requires you to create an acc
 
 After the reboot, you should be able to create a local account instead of signing in with a Microsoft account.
 
-## Terminating **Network Connection Flow** task
-
-1. Once in the windows installer, press Shift + F10 to open the Command Prompt.
-1. Type `taskmgr` and press Enter to open the Task Manager.
-1. Find and Terminate the task `Network Connection Flow`
-
-After closing both the Task Manager and the Command Prompt, you should be able to create a local account.
-
 ## Using **Rufus** to Create a Bootable Media
 
 1. Download the latest version of [Rufus](https://rufus.ie/en/){: target="_blank" }.
