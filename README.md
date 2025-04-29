@@ -12,7 +12,7 @@ Hébergé ici : [link](http://phil.beaufort.dev)
 ## Développement local
 
 1. Installer les dépendances avec : `bundle install`
-1. Lancer le serveur de développement `bundle exec jekyll serve`
+1. Lancer le serveur de développement `bundle exec jekyll s`
 1. Le serveur sera lancé à cette adresse : [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 
 ## Ajouter des articles
