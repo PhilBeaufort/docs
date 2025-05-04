@@ -49,7 +49,7 @@ Edit the config file Uncomment and change values or add them
 Parameter|Value|Position|Detail
 -|-|-|-
 PasswordAuthentification|no|56|Disable ssh password auth
-PermitRootLogin|no|Add to last line|Disable ssh login with root user
+PermitRootLogin|prohibit-password or no|Add to last line|SSH only or Disable ssh login with root user
 UsePAM|no|83|Disable ssh PAM Authentification
 
 ```bash
@@ -58,6 +58,12 @@ sudo nano /etc/ssh/sshd_config.d/50-cloud-init.conf
 {: .nolineno }
 
 Set PasswordAuthentification to `no`
+
+You can also add your public key in this file to connect with ssh
+
+```bash
+nano .ssh/authorized_keys
+```
 
 Apply changes 
 

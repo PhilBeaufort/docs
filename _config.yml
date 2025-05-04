@@ -64,7 +64,7 @@ analytics:
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
-    id: "62581d98-aab1-46d0-8b0c-90ce94ad5c70"
+    id: "a1f5121a-4918-4f7a-a998-37aa111af394"
     domain: "https://umami.beaufort.dev"
   matomo:
     id: # fill in your Matomo ID
@@ -139,9 +139,9 @@ assets:
     env: # [development | production]
 
 pwa:
-  enabled: true # The option for PWA feature (installable)
+  enabled: false # The option for PWA feature (installable)
   cache:
-    enabled: true # The option for PWA offline cache
+    enabled: false # The option for PWA offline cache
     # Paths defined here will be excluded from the PWA cache.
     # Usually its value is the `baseurl` of another website that
     # shares the same domain name as the current website.
