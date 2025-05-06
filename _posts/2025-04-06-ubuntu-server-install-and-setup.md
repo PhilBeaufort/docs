@@ -10,7 +10,7 @@ image:
     alt: Ubuntu server
 ---
 
-## 🔧 Setup a boot and installation media (Autoinstall not working)
+## 🔧 Setup a installation media and install
 
 `parameters` represent my config
 
@@ -40,30 +40,34 @@ image:
 
 ## SSH Security
 
-```
+```shell
 sudo nano /etc/ssh/sshd_config
 ```
+{: .nolineno }
 
 Edit the config file Uncomment and change values or add them
 
 Parameter|Value|Position|Detail
 -|-|-|-
-PasswordAuthentification|no|56|Disable ssh password auth
-PermitRootLogin|prohibit-password or no|Add to last line|SSH only or Disable ssh login with root user
-UsePAM|no|83|Disable ssh PAM Authentification
+PasswordAuthentification|`no`|56|Disable ssh password auth
+PermitRootLogin|`prohibit-password`  or `no`|Add to last line|SSH only (Coolify) or Disable ssh login with root user
+UsePAM|`no`|83|Disable ssh PAM Authentification
 
 ```bash
 sudo nano /etc/ssh/sshd_config.d/50-cloud-init.conf
 ```
 {: .nolineno }
 
-Set PasswordAuthentification to `no`
+Parameter|Value|
+-|-
+SPasswordAuthentification | `no`
 
 You can also add your public key in this file to connect with ssh
 
 ```bash
 nano .ssh/authorized_keys
 ```
+{: .nolineno }
 
 Apply changes 
 
