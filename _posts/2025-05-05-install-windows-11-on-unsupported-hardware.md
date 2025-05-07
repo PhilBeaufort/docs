@@ -7,7 +7,7 @@ categories: [Documentation, Windows]
 tags: [documentation, windows, local]
 ---
 
-This is a small guide to install Windows 11 on unsupported hardware. Windows 11 Enterprise IoT is the only  non-LTSC version compatible with old hardware. You have all of the windows 11 functionalities and feature update like all other versions of Windows 11.
+This is a small guide to install Windows 11 on unsupported hardware. Windows 11 Enterprise IoT is the only non-LTSC version compatible with old hardware. You have all of the windows 11 functionalities and feature update like all other versions of Windows 11.
 
 This documentation is based on the information here : [Gravesoft - Windows 11 on Unsupported Hardware](https://gravesoft.dev/clean_install_windows#windows-11-on-unsupported-hardware)
 
@@ -25,20 +25,22 @@ This documentation is based on the information here : [Gravesoft - Windows 11 on
 | **Intended use**                           | Home / office / enterprise use                                  | Embedded devices,<br>industrial systems, kiosks, POS, etc.     |
 
 1. Download the Windows 11 ISO in the language of your choice. [Windows 11 download](https://www.microsoft.com/en-ca/software-download/windows11)
-1. Download and launch Rufus to create aa bootable USB (8 Gb minimum). [Rufus download](https://rufus.ie/en/#download)
+1. Download and launch Rufus to create a bootable USB (8 Gb minimum). [Rufus download](https://rufus.ie/en/#download)
 1. Once in Rufus, select your USB key, and the Windows 11 ISO file downloaded.
-1. Select GPT if your computer uses EFI and Secure Boot, MBR if that is not the case and it uses legacy BIOS (check with your motherboard)
+1. Select GPT if your computer uses UEFI and Secure Boot, MBR if that is not the case and it uses legacy BIOS (check with your motherboard)
 
-    | **Generation**                         | **UEFI Support**                | **Secure Boot Support**               |
-    |----------------------------------------|---------------------------------|----------------------------------------|
-    | **Intel 1st Gen (Nehalem, Westmere)**  | ❌ Rare (legacy BIOS)           | ❌                                      |
-    | **Intel 2nd Gen (Sandy Bridge)**       | ✅ (UEFI common)                | ❌ / ⚠️ (varies by motherboard)         |
-    | **Intel 3rd Gen (Ivy Bridge)**         | ✅                              | ⚠️ (sometimes via BIOS/UEFI update)    |
-    | **Intel 4th Gen (Haswell) and newer**  | ✅                              | ✅                                      |
-    | **AMD before 2011 (AM2/AM3)**          | ❌                              | ❌                                      |
-    | **AMD AM3+ / FM2 (2011+)**             | ✅ (some UEFI motherboards)     | ⚠️                                      |
-    | **AMD Ryzen (2017+)**                  | ✅                              | ✅                                      |
-
+    | **Generation**                         | **UEFI Support**                | **Secure Boot Support**               | **TPM Support**                     | **Windows 11 Support**                                                  |
+    |----------------------------------------|----------------------------------|----------------------------------------|-------------------------------------|------------------------------------------------------------------------|
+    | **Intel 1st Gen (Nehalem, Westmere)**  | ❌ Rare (legacy BIOS)            | ❌                                      | ❌ (usually none)                   | ❌ Not supported                                                       |
+    | **Intel 2nd Gen (Sandy Bridge)**       | ✅ (UEFI common)                 | ❌ / ⚠️ (varies by motherboard)         | ⚠️ (optional or add-on TPM)         | ❌ Not officially supported                                            |
+    | **Intel 3rd Gen (Ivy Bridge)**         | ✅                               | ⚠️ (via BIOS/UEFI update)              | ⚠️ (optional or add-on TPM)         | ❌ Not officially supported                                            |
+    | **Intel 4th Gen (Haswell)**            | ✅                               | ✅                                      | ⚠️ (some with firmware TPM)         | ❌ Not officially supported                                            |
+    | **Intel 8th Gen (Coffee Lake) and later**| ✅                               | ✅                                      | ✅ (firmware TPM 2.0 or discrete)   | ✅ Fully supported (oldest supported Intel: **Core i7-8700**)          |
+    |__-__|__-__|__-__|__-__|__-__|
+    | **AMD before 2011 (AM2/AM3)**          | ❌                               | ❌                                      | ❌                                  | ❌ Not supported                                                       |
+    | **AMD AM3+ / FM2 (2011+)**             | ✅ (some UEFI motherboards)      | ⚠️                                      | ⚠️ (varies, often no TPM)           | ❌ Not officially supported                                            |
+    | **AMD Ryzen 1st Gen (2017)**           | ✅                               | ✅                                      | ⚠️ (fTPM 2.0 usually present,<br>but not always supported) | ⚠️ Some models unofficially<br> supported (e.g., 1600 AF)              |
+    | **AMD Ryzen 2nd Gen and later (2018+)**| ✅                               | ✅                                      | ✅ (fTPM 2.0 included)              | ✅ Fully supported (oldest supported: **Ryzen 2500U / 2600**)         |
 
 1. Config the USB key name (optional)
 1. Select **Start**
