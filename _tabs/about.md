@@ -4,12 +4,12 @@ icon: fas fa-info-circle
 order: 4
 ---
 <!-- markdownlint-disable MD041 -->
-I'm a recent graduate of the Software Engineering program at the École de technologie supérieure (ÉTS).
+I'm a recent graduate of the Software Engineering program at the École de technologie supérieure (ÉTS) in Montreal.
 
-This website/documentation aims to centralize his projects, experiences, and technical insights, while also serving as a professional showcase and reference for his work.
+This website aims to centralize my development doc. That way, I'll have somewhere to search when I've forgotten a small command.
 
 ---
 
-Je suis récement diplômé du programme de génie logiciel de l'École de technologie supérieure (ÉTS)
+Je suis récemment diplômé du programme de génie logiciel de l'École de technologie supérieure (ÉTS) à Montréal.
 
-Ce site/documentation a pour but de centraliser ses projets, expériences et réflexions techniques, tout en servant de vitrine professionnelle et de référence pour ses travaux.
+Ce site a simplement pour but de centraliser ma doc de développement.
