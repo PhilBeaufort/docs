@@ -1,17 +1,18 @@
 # PhilBeaufort Doc
 
-Hébergé ici : [link](http://phil.beaufort.dev)
+Hébergé ici : [link](http://docs.beaufort.dev)
 
 [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
 [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
 
 ## Requis
 
-- Ruby et Jekyll [Installer Ruby/Jekyll](https://philbeaufort.github.io/docs/posts/jekyll/)
+- Ruby et Jekyll [Installer Ruby/Jekyll](https://docs.beaufort.dev/posts/use-jekyll/)
 
 ## Développement local
 
-1. Installer les dépendances avec : `bundle install`
+1. Installer les dépendances gem : `gem install jekyll bundler`
+1. Installer les dépendances jekyll : `bundle install`
 1. Lancer le serveur de développement `bundle exec jekyll s`
 1. Le serveur sera lancé à cette adresse : [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 
