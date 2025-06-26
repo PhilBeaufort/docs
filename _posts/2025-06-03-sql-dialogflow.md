@@ -1,14 +1,14 @@
 ---
 layout: post
-title: SQL Cheat Sheet
+title: SQL Dialogflow
 date: 2025-06-03 00:04 -0400
 ---
 
-SQL Query for dialogflow monitoring
+SQL Query for dialogflow monitoring wuith Google Cloud
 
 ```sql
 WITH sources AS (
-  SELECT * FROM  `mega-agent-xllj.northamerica-northeast1.dialogflow._AllLogs`
+  SELECT * FROM  `PROJECT_ID.northamerica-northeast1.dialogflow._AllLogs`
 ),
 
 logs_bucket AS (
