@@ -23,7 +23,7 @@ See the [theme documentation](https://github.com/cotes2020/jekyll-theme-chirpy/w
 
 ## Install Ruby and Jekyll
 
-To install Runby and RubyGems, you can follow the installation guide for your platform: [Jekyll - Installation](https://jekyllrb.com/docs/installation/){: target="_blank" }
+To install Ruby and RubyGems, you can follow the installation guide for your platform: [Jekyll - Installation](https://jekyllrb.com/docs/installation/){: target="_blank" }
 
 For Windows:
 

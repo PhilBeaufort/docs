@@ -78,7 +78,7 @@ AM5 motherboards (B650, X670, etc.) may require BIOS updates for newer CPUs.
 - Do NOT power off during update
 - Use BIOS Flashback if available (no CPU required)
 
-## 3. Check BIOS Compatibility
+## 3. Upgrade CPU
 
 **Required Tools**
 - Thermal paste
