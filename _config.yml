@@ -1,6 +1,23 @@
 # The Site Configuration
 plugins:
   - jekyll-sitemap
+
+# Sitemap configuration for Google SEO
+sitemap:
+  ignore:
+    - /noindex/
+  priority:
+    index: 1.0
+    about: 0.8
+    tags: 0.7
+    categories: 0.7
+  changefreq:
+    index: weekly
+    about: monthly
+    posts: weekly
+    tags: monthly
+    categories: monthly
+
 # Import the theme
 theme: jekyll-theme-chirpy
 
