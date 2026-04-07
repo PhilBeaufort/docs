@@ -62,10 +62,15 @@ manage-bde -on C:
 
 AM5 motherboards (B650, X670, etc.) may require BIOS updates for newer CPUs.
 
+> Check BIOS version directly in bios or with software like :
+> - [HWINFO](https://www.hwinfo.com/)
+> - [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html)
+{: .prompt-tip}
+
 **Steps:**
 1. Identify your motherboard model
-1. Visit manufacturer website (ASUS, MSI, Gigabyte, ASRock)
-1. Check:
+2. Visit manufacturer website (ASUS, MSI, Gigabyte, ASRock)
+3. Check:
    - CPU support list
    - Required BIOS version
 
