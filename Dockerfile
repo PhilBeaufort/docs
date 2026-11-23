@@ -20,7 +20,7 @@ RUN bundle install
 RUN JEKYLL_ENV=production bundle exec jekyll build
 
 # Stage 2: Serve with nginx
-FROM nginx:1.29.7-alpine AS runner
+FROM nginx:1.31.9-alpine AS runner
 
 # Copy generated site from builder stage
 COPY nginx.conf /etc/nginx/nginx.conf
