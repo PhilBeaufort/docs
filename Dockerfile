@@ -16,8 +16,8 @@ COPY Gemfile Gemfile.lock .dockerignore ./
 # Install dependencies (resolves to patched gem versions)
 RUN bundle install --jobs=4 --retry=3
 
-# Build the site (production mode disables live reload, etc.)
-RUN JEKYLL_ENV=production bundle exec jekyll build --future=false
+# Build the site (production mode)
+RUN JEKYLL_ENV=production bundle exec jekyll build
 
 # Stage 2: Serve with nginx - updated to fixed version to remediate CVEs
 FROM nginx:1.31.10-alpine AS runner
