@@ -23,7 +23,7 @@ RUN JEKYLL_ENV=production bundle exec jekyll build --future=false
 FROM nginx:1.31.10-alpine AS runner
 
 # Apply security patches for CVE-2026-4738 (zlib), libcrypto3, libssl3, libxml2
-RUN apk add --no-cache --upgrade . \
+RUN apk upgrade --no-cache \
     && rm -rf /var/cache/apk/*
 
 # Copy generated site from builder stage
