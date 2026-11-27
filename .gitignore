@@ -1,7 +1,9 @@
 # Bundler cache
 .bundle
 vendor
-Gemfile.lock
+
+# Gem dependencies are tracked for Docker builds
+# Gemfile.lock
 
 # Jekyll cache
 .jekyll-cache
