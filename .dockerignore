@@ -3,6 +3,7 @@ README.md
 LICENSE
 _site
 .jekyll-cache
+Gemfile.lock
 tools
 devcontainer
 .vscode
