@@ -14,7 +14,7 @@ WORKDIR /app
 COPY Gemfile Gemfile.lock .dockerignore ./
 
 # Install dependencies (resolves to patched gem versions)
-RUN bundle install --jobs=4 --retry=3 --no-document
+RUN bundle install --jobs=4 --retry=3
 
 # Build the site (production mode disables live reload, etc.)
 RUN JEKYLL_ENV=production bundle exec jekyll build --future=false
